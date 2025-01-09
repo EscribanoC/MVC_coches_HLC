@@ -16,7 +16,7 @@ public class CocheServicio {
 		return cocheRepositorio.findAll();
 	}
 	
-	public Coche guardarProducto(Coche producto) {
+	public Coche guardarCoche(Coche producto) {
 		return cocheRepositorio.save(producto);
 	}
 	
@@ -26,7 +26,7 @@ public class CocheServicio {
 				);
 	}	
 	
-	public void eliminarProducto(Long id) {
+	public void eliminarCoche(Long id) {
 		cocheRepositorio.deleteById(id);
 	}
 }

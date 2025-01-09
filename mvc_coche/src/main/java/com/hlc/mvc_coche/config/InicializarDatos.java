@@ -1,5 +1,6 @@
 package com.hlc.mvc_coche.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.hlc.mvc_coche.entidades.Coche;
@@ -9,6 +10,7 @@ import jakarta.annotation.PostConstruct;
 
 @Component
 public class InicializarDatos {
+	@Autowired
 	private CocheServicio cocheServicio;
 	
 	@PostConstruct
@@ -21,12 +23,12 @@ public class InicializarDatos {
 		coche1.setMarca("Honda");
 		coche1.setMatricula("0860DLC");
 		coche1.setColor("Gris");
-		cocheServicio.guardarProducto(coche1);
+		cocheServicio.guardarCoche(coche1);
 		
 		Coche coche2 = new Coche();
 		coche2.setMarca("Toyota");
 		coche2.setMatricula("4212ERT");
 		coche2.setColor("Azul");
-		cocheServicio.guardarProducto(coche2);
+		cocheServicio.guardarCoche(coche2);
 	}
 }
