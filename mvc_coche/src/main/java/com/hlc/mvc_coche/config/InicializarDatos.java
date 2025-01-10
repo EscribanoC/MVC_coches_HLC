@@ -11,7 +11,9 @@ import jakarta.annotation.PostConstruct;
 
 @Component
 public class InicializarDatos {
-	
+	/*Se puede usar cocheRepositorio o cocheServicio, ambas clases funcionan y
+	 puesto que al ser una clase de DESARROLLO, luego se borrará
+	*/
 	private CocheRepositorio cocheRepositorio;
 	public InicializarDatos(CocheRepositorio cocheRepositorio) {
 		this.cocheRepositorio = cocheRepositorio;
@@ -20,20 +22,14 @@ public class InicializarDatos {
 	
 	@PostConstruct
 	public void init() {
-		/*if(cocheRepositorio.findAll().iterator().hasNext()) {
+		if(cocheRepositorio.findAll().iterator().hasNext()) {
 			return;//Si existen datos en una base de datos, no crea los productos de abajo
-		}*/
+		}
 		
-		Coche coche1 = new Coche();
-		coche1.setMarca("Honda");
-		coche1.setMatricula("0860DLC");
-		coche1.setColor("Gris");
+		Coche coche1 = new Coche("Honda", "0860DLC", "Gris");
 		cocheRepositorio.save(coche1);
 		
-		Coche coche2 = new Coche();
-		coche2.setMarca("Toyota");
-		coche2.setMatricula("4212ERT");
-		coche2.setColor("Azul");
+		Coche coche2 = new Coche("Toyota", "4212ERT", "Azul");
 		cocheRepositorio.save(coche2);
 	}
 }

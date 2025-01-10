@@ -19,7 +19,7 @@ public class CocheControlador {
 
          @GetMapping("/")
         public String listarCoche(Model model) {
-            model.addAttribute("coches", cocheServicio.listarCoches());
+            model.addAttribute("coches", cocheServicio.obtenerTodosLosCoches());
             return "index";
         }
 
@@ -32,7 +32,7 @@ public class CocheControlador {
 
         @GetMapping("/coche/editar/{id}")
         public String mostrarFormularioDeEditarCoche(@PathVariable Long id, Model model) {
-            Coche coche = cocheServicio.obtenerPorId(id);
+            Coche coche = cocheServicio.obtenerCochePorId(id);
             model.addAttribute("coche", coche);
             return "coche-form"; 
         }
