@@ -14,6 +14,18 @@ public class Coche {
 	private String matricula;
 	private String color;
 	
+	public Coche(String marca, String matricula, String color) {
+		super();
+		this.id = id;
+		this.marca = marca;
+		this.matricula = matricula;
+		this.color = color;
+	}
+
+	public Coche() {
+		
+	}
+
 	public long getId() {
 		return id;
 	}
